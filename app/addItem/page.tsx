@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Button from "../components/ui/Button";
 import Link from "next/link";
-import { createClient } from "../../lib/supabase/client";
+import { getSupabaseBrowserClient } from "@/lib/supabase/browser-client";
 import { PiCaretLeftBold, PiUploadSimpleLight } from "react-icons/pi";
 
 export default function AddItem() {
@@ -14,7 +14,7 @@ export default function AddItem() {
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState<any>({});
 
-  const supabase = createClient();
+  const supabase = getSupabaseBrowserClient();
 
   const handleSubmit = async () => {
     const newErrors: any = {};

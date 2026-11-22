@@ -2,14 +2,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSession } from '../../../hooks/useSession';
-import { createClient } from '../../../lib/supabase/client';
 import Button from '../ui/Button';
 import Menu from './Menu';
+import { getSupabaseBrowserClient } from "@/lib/supabase/browser-client";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { session } = useSession();
-  const supabase = createClient();
+  const supabase = getSupabaseBrowserClient();
   const logout = async () => { await supabase.auth.signOut(); };
   const handleClick = () => setIsOpen(!isOpen);
 
@@ -55,7 +55,7 @@ export default function Navbar() {
           {session ? (
             <Button variant="ghost" onClick={logout}>Logout</Button>
           ) : (
-            <Link href="/start">
+            <Link href="/email-password">
               <Button variant="primary">Login</Button>
             </Link>
           )}

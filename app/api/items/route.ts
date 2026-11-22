@@ -1,10 +1,10 @@
-import { createClient } from "@/lib/supabase/server"
+import { createSupabaseServerClient } from '@/lib/supabase/server-client'
 
 export async function GET() {
   console.log("✅ /api/items hit")
 
   try {
-    const supabase = await createClient()
+    const supabase = await createSupabaseServerClient()
     console.log("✅ Supabase client created")
 
     const { data, error } = await supabase
