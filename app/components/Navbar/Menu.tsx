@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { useSession } from '../../../hooks/useSession';
-import { createClient } from '../../../lib/supabase/client';
+import { getSupabaseBrowserClient } from "@/lib/supabase/browser-client";
 import { PiX } from "react-icons/pi";
 
 
 export default function Menu({ onClose }: { onClose: () => void }) {
   const { session } = useSession();
-  const supabase = createClient();
+  const supabase = getSupabaseBrowserClient();
 
   const logout = async () => {
     await supabase.auth.signOut();
@@ -15,7 +15,7 @@ export default function Menu({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full max-w-xs h-screen bg-white/90 backdrop-blur z-[999] flex flex-col gap-6 px-6 pt-12">
+    <div className="fixed top-0 left-0 w-full max-w-xs h-screen bg-white/90 z-[900] flex flex-col gap-6 px-6 pt-12">
       <button
         onClick={onClose}
         aria-label="Close menu"
@@ -23,12 +23,8 @@ export default function Menu({ onClose }: { onClose: () => void }) {
       >
         <PiX />
       </button>
-      <Link href="/dashboard" onClick={onClose} className="font-medium">
+      <Link href="/planning" onClick={onClose} className="font-medium">
         Home
-      </Link>
-
-      <Link href="/addItem" onClick={onClose} className="font-medium">
-        Add Item
       </Link>
 
       {session ? (
@@ -40,7 +36,7 @@ export default function Menu({ onClose }: { onClose: () => void }) {
         </button>
       ) : (
         <Link
-          href="/start"
+          href="/email-password"
           onClick={onClose}
           className="font-medium"
         >

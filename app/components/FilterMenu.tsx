@@ -52,7 +52,7 @@ export default function FilterMenu({
 
 
         {dropdownOpen === "brand" && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 z-[999]">
             {availableBrands.map((brand) => (
               <button
                 key={brand}

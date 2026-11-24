@@ -74,7 +74,7 @@ export default function EmailPasswordDemo() {
         {!currentUser && (
           <>
             <form
-              className="relative overflow-hidden border p-8 text-slate-700"
+              className="relative max-w-2xl overflow-hidden border border-stone-300 p-8 text-stone-800"
               onSubmit={handleSubmit}
             >
               <div
@@ -85,28 +85,24 @@ export default function EmailPasswordDemo() {
                 className="pointer-events-none absolute -bottom-10 right-2 -z-10 h-28 w-40"
                 aria-hidden="true"
               />
-              <div className="absolute inset-x-8 top-6 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-700">
-                <span>Primary</span>
-                <span>Flow</span>
-              </div>
               <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-700">
+                  <p className="text-xs uppercase tracking-[0.2em] text-stone-800">
                     Credentials
                   </p>
-                  <h3 className="text-xl font-semibold text-slate-700">
+                  <h3 className="text-xl font-semibold text-stone-800">
                     {mode === "signup" ? "Create an account" : "Welcome back"}
                   </h3>
                 </div>
-                <div className="flex rounded-full border border-slate-300 p-1 text-xs font-semibold text-slate-700">
+                <div className="flex border border-stone-300 p-1 text-xs font-semibold text-stone-800">
                   {(["signup", "signin"] as Mode[]).map((option) => (
                     <button
                       key={option}
                       type="button"
                       aria-pressed={mode === option}
                       onClick={() => setMode(option)}
-                      className={`rounded-full px-4 py-1 transition ${mode === option
-                        ? "bg-pink-300 text-white shadow shadow-pink-500/20"
+                      className={`px-4 py-1 transition ${mode === option
+                        ? "bg-stone-600 text-white shadow shadow-stone-500/20"
                         : "text-slate-700"
                         }`}
                     >
@@ -116,18 +112,18 @@ export default function EmailPasswordDemo() {
                 </div>
               </div>
               <div className="mt-6 space-y-4">
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-medium text-stone-800">
                   Email
                   <input
                     type="email"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                     required
-                    className="mt-2 w-full border border-white/10 bg-slate-200 px-3 py-2.5 text-base text-slate-700 placeholder-slate-500 focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                    className="mt-2 w-full border border-white/10 bg-stone-200 px-3 py-2.5 text-base text-stone-800 placeholder-slate-500 focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
                     placeholder="you@email.com"
                   />
                 </label>
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-medium text-stone-800">
                   Password
                   <input
                     type="password"
@@ -135,19 +131,19 @@ export default function EmailPasswordDemo() {
                     onChange={(event) => setPassword(event.target.value)}
                     required
                     minLength={6}
-                    className="mt-2 w-full border border-white/10 bg-slate-200 px-3 py-2.5 text-base text-slate-700 placeholder-slate-500 focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                    className="mt-2 w-full border border-white/10 bg-stone-200 px-3 py-2.5 text-base text-stone-800 placeholder-stone-500 focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
                     placeholder="At least 6 characters"
                   />
                 </label>
               </div>
               <button
                 type="submit"
-                className="mt-6 inline-flex w-full items-center justify-center bg-pink-500 px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-pink-400 disabled:cursor-not-allowed disabled:bg-slate-600/40"
+                className="mt-6 inline-flex w-full items-center justify-center bg-stone-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-stone-600 disabled:cursor-not-allowed disabled:bg-slate-600/40"
               >
                 {mode === "signup" ? "Create account" : "Sign in"}
               </button>
               {status && (
-                <p className="mt-4 text-sm text-slate-700" role="status" aria-live="polite">
+                <p className="mt-4 text-sm text-stone-800" role="status" aria-live="polite">
                   {status}
                 </p>
               )}
@@ -156,18 +152,18 @@ export default function EmailPasswordDemo() {
         )}
         {currentUser && (
           <section className="rounded-xl border border-[#E9E4DE] bg-white p-6">
-            <h3 className="text-lg font-semibold text-[#393432]">
+            <h3 className="text-lg font-semibold text-stone-800">
               Welcome back!
             </h3>
 
-            <p className="mt-2 text-sm text-[#77706C]">
+            <p className="mt-2 text-sm text-stone-800">
               You are signed in as {currentUser.email}
             </p>
 
             <button
               type="button"
               onClick={handleSignOut}
-              className="mt-6 w-full rounded-lg bg-[#C8796E] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#B86B61]"
+              className="mt-6 w-full bg-white border px-4 py-3 text-sm font-semibold text-stone-800 transition hover:bg-[#B86B61]"
             >
               Sign out
             </button>

@@ -3,6 +3,7 @@ export interface ClothingItem {
   id: number;
   title: string;
   brand: string;
+  category?: string;
   imageUrl: string;
   owned?: boolean;
   size?: string;

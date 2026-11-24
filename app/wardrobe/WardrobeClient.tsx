@@ -57,7 +57,7 @@ export default function WardrobeClient() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="self-center font-serif text-2xl md:text-[clamp(2.25rem,3vw,3rem)] font-normal tracking-normal text-foreground p-4">My decided Wardrobe</h1>
+      <h1 className="self-center font-serif text-2xl md:text-[clamp(2.25rem,3vw,3rem)] font-normal tracking-normal text-stone-800 p-4">My decided Wardrobe</h1>
       <StickySecondBar 
       showFilterMenu={showFilterMenu} 
       setShowFilterMenu={setShowFilterMenu} 

@@ -89,14 +89,14 @@ export default function AddItem() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8 py-2">
-      <Link href="/dashboard" className="flex flex-row self-start text-foreground mb-4"><PiCaretLeftBold size="1.1rem" className="mr-2 pt-2" />Back to Dashboard</Link>
+      <Link href="/planning" className="flex flex-row self-start text-foreground mb-4"><PiCaretLeftBold size="1.1rem" className="mr-2 pt-2" />Back to Planning</Link>
       <h2 className="font-serif text-2xl md:text-[clamp(2.25rem,3vw,3rem)] font-normal tracking-normal text-foreground">Add item to list</h2>
 
       <div className="w-full max-w-md flex flex-col gap-4 text-left">
         <div className="flex flex-row justify-start items-center gap-4 py-4">
           <label className="mt-4">Upload image</label>
           <label htmlFor="file-upload" className="cursor-pointer">
-            <PiUploadSimpleLight size="1.5rem" className="text-[#C084FC] mt-1" />
+            <PiUploadSimpleLight size="1.5rem" className="text-stone-700 mt-1" />
           </label>
 
           <input
@@ -118,7 +118,7 @@ export default function AddItem() {
 
         <label>Name item</label>
         <input
-          className="border-b border-b-[#cbd1d8] p-2"
+          className="border-b border-b-stone-600 p-2"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -126,7 +126,7 @@ export default function AddItem() {
 
         <label>Brand</label>
         <input
-          className="border-b border-b-[#cbd1d8] p-2"
+          className="border-b border-b-stone-600 p-2"
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
         />
@@ -145,11 +145,11 @@ export default function AddItem() {
                 appearance-none
                 h-4 w-4
                 rounded-full
-                border border-gray-400
-                checked:bg-[#C084FC]
-                checked:border-[#C084FC]
+                border border-stone-400
+                checked:bg-stone-800
+                checked:border-stone-700
                 checked:ring-2
-                checked:ring-[#C084FC]/40
+                checked:ring-stone-700/40
               "
             />
             Owned
@@ -166,11 +166,11 @@ export default function AddItem() {
                 appearance-none
                 h-4 w-4
                 rounded-full
-                border border-gray-400
-                checked:bg-[#C084FC]
-                checked:border-[#C084FC]
+                border border-stone-400
+                checked:bg-stone-800
+                checked:border-stone-700
                 checked:ring-2
-                checked:ring-[#C084FC]/40
+                checked:ring-stone-700/40
               "
             />
             Not owned
@@ -180,7 +180,7 @@ export default function AddItem() {
 
         <label className=" pt-4">Size</label>
         <input
-          className="border-b border-b-[#cbd1d8] p-2"
+          className="border-b border-b-stone-600 p-2"
           value={size}
           onChange={(e) => setSize(e.target.value)}
         />
@@ -188,7 +188,7 @@ export default function AddItem() {
         <label>Price</label>
         <input
           type="number"
-          className="border-b border-b-[#cbd1d8] p-2"
+          className="border-b border-b-stone-600 p-2"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />

@@ -12,6 +12,7 @@ const cards = [
     {
         title: "wardrobe",
         description: "Plan your clothing for the week",
+        imageUrl: "/wardrobe",
         href: "/wardrobe",
     },  
     {
@@ -43,10 +44,10 @@ export default function PlanningPage({
             <Link 
             key={card.href}
             href={card.href}
-            className="border p-6 hover:shadow-md transition"
+            className="border border-stone-300 p-6 hover:shadow-md transition"
             >
             <img src={imageUrl} alt=""/>
-            <h3>{card.title}</h3>
+            <h3 className='font-semibold capitalize'>{card.title}</h3>
             <p>{card.description}</p>
 
             </Link>
