@@ -18,8 +18,8 @@ export default function Navbar() {
       {/* Navbar row */}
       <div className="flex items-center justify-between h-16 px-4 md:px-8 bg-white z-[999]relative">
         <ul className='flex flex-row gap-6 hidden md:flex'>
-          <li><Link href="/dashboard" className='font-medium'>Home</Link></li>
-          <li><Link href="/addItem" className='font-medium'>Add item</Link></li>
+          <li><Link href="/Planning" className='font-medium'>Home</Link></li>
+          <li><Link href="/wardrobe" className='font-medium'>Wardrobe</Link></li>
         </ul>
 
         {/* Hamburger on the left */}

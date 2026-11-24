@@ -7,7 +7,7 @@ import { ClothingItem } from "../types/clothingItem";
 import StickySecondBar from "../components/Navbar/StickySecondBar";
 
 
-export default function DashboardClient() {
+export default function WardrobeClient() {
   const [showFilterMenu, setShowFilterMenu] = useState(false);
   const [allItems, setAllItems] = useState<ClothingItem[]>([]);
   const [filters, setFilters] = useState({
@@ -36,14 +36,12 @@ export default function DashboardClient() {
   const openId = sp.get("item");
 
   const handleCardClick = (id: number) => {
-    router.push(`/dashboard?item=${id}`);
+    router.push(`/wardrobe?item=${id}`);
   };
 
   const handleCloseModal = () => {
-    router.push("/dashboard");
+    router.push("/wardrobe");
   };
-
-
 
   useEffect(() => {
     fetch('/api/items')

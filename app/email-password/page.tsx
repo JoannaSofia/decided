@@ -11,6 +11,6 @@ export default async function EmailPasswordPage() {
     console.log( { user });
     
   return (
-    <EmailPassword user={null}/>
+    <EmailPassword />
   )
 }

@@ -3,6 +3,7 @@ import Button from "./ui/Button";
 
 export type itemsModalProps = {
   id: string;
+  title?: string;
   data?: { title: string; brand: string; imageUrl: string };
   onClose: () => void;
 };
